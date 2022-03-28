@@ -1,0 +1,13 @@
+<!-- components/imageViewer/imageViewer.wxml -->
+<view class="viewer" wx:if="{{onShow}}" catchtap="hideViewer" catchtouchstart="touchstart" catchtouchmove="touchmove" catchtouchend="touchend">
+  <view class="maskbg {{onClass ? 'show' : 'hide'}}"></view>
+  <view class="file-name" style="margin-top: 30rpx;">{{imgSort}}</view>
+  <view class="file-name">{{imgName}}</view>
+  <view class="touch-container">
+    <movable-area style="width: {{windowWidth}}px; height:{{windowHeight}}px; position: absolute;top:-20px">
+      <movable-view friction="1" animation="false" scale="{{true}}" scale-min="1" x="{{(windowWidth - width/2)/2}}" y="{{(windowHeight-height/2)/2}}" style="width: {{width}}rpx; height: {{height + 30}}rpx;" direction="all">
+        <image class="img" src="{{imgUrl}}" style="width: {{width}}rpx; height: {{height}}rpx;" bindload="bindload"></image>
+      </movable-view>
+    </movable-area>
+  </view>
+</view>

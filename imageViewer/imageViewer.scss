@@ -1,0 +1,76 @@
+// @import "../../../sass/_common.scss";
+
+/* components/imageViewer/imageViewer.wxss */
+.viewer {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+
+  .maskbg {
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    transition: all 350ms;
+  }
+
+  .file-name {
+    font-size: 17px;
+    font-family: PingFang SC;
+    font-weight: bold;
+    color: #ffffff;
+    z-index: 20;
+    text-align: center;
+    margin: 0 40rpx;
+    word-wrap: break-word;
+  }
+
+  .maskbg.hide {
+    width: 0;
+    height: 0;
+  }
+
+  .viewimage {
+    position: absolute;
+    transform-origin: center center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .viewimage image {
+    transition: all 350ms;
+  }
+
+  .viewimage image.show {
+    width: 700rpx;
+    height: 1100rpx;
+    z-index: 9;
+  }
+
+  .viewimage image.hide {
+    width: 0;
+    height: 0;
+  }
+}
+
+.touch-container {
+  width: 100%;
+  height: 100%;
+  padding-top: 0.1px;
+}
+
+.img {
+  position: absolute;
+  width: 690rpx;
+  height: 300rpx;
+  transform-origin: center center;
+}
